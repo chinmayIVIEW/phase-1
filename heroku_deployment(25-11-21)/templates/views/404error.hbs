@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>top_header}}
+</head>
+
+<body>
+    {{>navbar}}
+    <!-- main header -->
+    <div class="container-fluid main-header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- for right side -->
+                    <div class="col-md-12 col-12 main-header-left align-items-center">
+                        <figure class="errimg">
+                            <img src="images/error.jpeg" alt="about-page" class="img-fluid" title="about-us-page">
+                        </figure>
+                        <p>This is a Error Page </p>
+                        <h1>{{errorMsg}}</h1>
+                        <a href="/"><button>Go back</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer code -->
+    {{>footer}}
+</body>
+
+</html>

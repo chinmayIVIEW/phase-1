@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="quotes"></div>
+    <div id="author"></div>
+        <button id="newQ">New quotes</button>
+        <button id="postme">Tweet</button>
+    <script>
+        const quotes = document.getElementById("quotes");
+        const author = document.getElementById("author");
+        const newQ = document.getElementById("newQ");
+        const postme = document.getElementById("postme");
+
+        let real_data = " "
+        let quoteData = " "
+        const postMe = ()=>{
+            let tweetPost = `https:twitter.com/intent/tweet?text=${quoteData.text}`
+            window.open(tweetPost)
+        }
+
+        const getNewQuotes = ()=>{
+            let rnum = Math.floor(Math.random()*real_data.length);
+            quoteData = real_data[rnum]
+            quotes.innerHTML = `${quoteData.text}`
+            author.innerHTML = `${quoteData.author}`
+            if (quoteData.author == null) {
+                author.innerText = "unKnown"
+            } 
+        }
+        const getQuotes = async () => {
+            const api = "Your api is to be here"
+            try {
+                let data = await fetch(api)
+                real_data = await data.json()
+                getNewQuotes()
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        postme.addEventListener("click",postMe)
+        newQ.addEventListener('click',getNewQuotes)
+        getQuotes()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+window -
+it is the main container or global object and any opertion related to entire browser window can e a part of window object .
+all the member part like objects ,methods or properties. if they are the part of window object then we do not refer the window object.
+windows has methods , properties and object. like settimeout() or set interval() arethe methods, where as document is the object of the window and it also has a screen object with properties describing the physical display.
+
+ex:-
+        window.location
+        window.location.href
+
+document -
+whereas the DOM is the child of window object
+where in the Dom we need to refer the document,if we want to use the document object,methods and properties.
+document is just the object of the global object window,which deals with the document, the html elements themselves .
+
+ex:-    change the background color to red
+        document.body.style.background = "red"
+
+BOM = Browser object model 
+which deals with browser components aside from the document,like history,location,navigatorand screen (as well as come other that vary bt browser). OR in simple meaning all the window operations whcih comes under BOM are performed using BOM.
+
+
+
+getelement by id :-
+return a refernece to the elemen by its id.if the element with the specified id is not in the document, it will return null
+
+
+queryselecter :-
+return the first element within the document that matches the specified group of selector,or null if no match found
