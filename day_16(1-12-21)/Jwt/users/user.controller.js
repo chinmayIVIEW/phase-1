@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt")
 const { sign } = require("jsonwebtoken")
 
 
-
 module.exports = {
     createUser : (req,res)=>{ 
         const body = req.body
@@ -22,7 +21,7 @@ module.exports = {
         })
     },
     getUserById: (req,res) =>{
-        const id = req.params.id
+        const id = req.params.id      
         getUserById(id,(err,result)=>{
             if (err){
                 console.log(err);
@@ -95,7 +94,7 @@ module.exports = {
         const data = req.body
         getUserByCity(data,(err,results)=>{
             if(err){
-                console.log(err);
+                return err;
             }
             if(!results){
                 return res.json({

@@ -2,7 +2,6 @@ const pool = require("../config/database")
 
 
 
-
 module.exports = {
     create: (data,callback)=>{
         username = data.UserName
